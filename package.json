@@ -1,0 +1,41 @@
+{
+  "name": "stress-test",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "DEBUG=benchmark nodemon index.js",
+    "start": "DEBUG=benchmark node index.js"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "async": "^2.5.0",
+    "axios": "^0.16.2",
+    "debug": "^2.6.8",
+    "dotenv": "^4.0.0",
+    "eslint-config-prettier": "^2.3.0",
+    "eslint-plugin-prettier": "^2.1.2",
+    "humanize-duration": "^3.10.0",
+    "jsonpath": "^0.2.11",
+    "lodash": "^4.17.4",
+    "mixpanel": "^0.7.0",
+    "performance-now": "^2.1.0",
+    "qs": "^6.5.0",
+    "stats-lite": "^2.1.0",
+    "table": "^4.0.1"
+  },
+  "engines" : { "node" : ">=8" },
+  "devDependencies": {
+    "babel-eslint": "^7.2.3",
+    "eslint": "^3.19.0",
+    "eslint-config-react-app": "^1.0.5",
+    "eslint-plugin-flowtype": "^2.33.0",
+    "eslint-plugin-import": "^2.2.0",
+    "eslint-plugin-jsx-a11y": "^5.0.1",
+    "eslint-plugin-react": "^7.0.1",
+    "nodemon": "^1.11.0",
+    "prettier": "^1.5.2"
+  }
+}

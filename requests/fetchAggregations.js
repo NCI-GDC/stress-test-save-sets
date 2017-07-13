@@ -1,0 +1,10 @@
+const axios = require('axios');
+
+const payload = {
+  id: 'q1',
+  query:
+    'query Queries($first_0:Int!,$first_1:Int!) {viewer {...F4}} fragment F0 on Explore {genes {_hits2eJtBN:hits(first:$first_0) {total}}} fragment F1 on ECaseAggregations {case_id @include(if:true) {buckets {doc_count,key}},demographic__ethnicity @include(if:true) {buckets {doc_count,key}},demographic__gender @include(if:true) {buckets {doc_count,key}},demographic__race @include(if:true) {buckets {doc_count,key}},diagnoses__age_at_diagnosis @include(if:true) {count,max,avg,min},diagnoses__days_to_death @include(if:true) {count,max,avg,min},diagnoses__vital_status @include(if:true) {buckets {doc_count,key}},disease_type @include(if:true) {buckets {doc_count,key}},primary_site @include(if:true) {buckets {doc_count,key}},project__program__name @include(if:true) {buckets {doc_count,key}},project__project_id @include(if:true) {buckets {doc_count,key}},submitter_id @include(if:true) {buckets {doc_count,key}}} fragment F2 on GeneAggregations {biotype {buckets {doc_count,key}},is_cancer_gene_census {buckets {doc_count,key,key_as_string}}} fragment F3 on SsmAggregations {consequence__transcript__annotation__impact {buckets {doc_count,key}},consequence__transcript__consequence_type {buckets {doc_count,key}},mutation_subtype {buckets {doc_count,key}},occurrence__case__observation__variant_calling__variant_caller {buckets {doc_count,key}}} fragment F4 on Root {explore {...F0},explore {cases {_aggregationsEJDan:aggregations(aggregations_filter_themselves:false) {...F1},_hits20nf65:hits(first:$first_1,offset:$first_0,score:"gene.gene_id") {total}},genes {_aggregationsEJDan:aggregations(aggregations_filter_themselves:false) {...F2},_hits3nYYDF:hits {total}},ssms {_aggregationsEJDan:aggregations(aggregations_filter_themselves:false) {...F3},_hits3nYYDF:hits {total},_hits2PHjFL:hits {total},_hits1fx5X6:hits {total}}}}',
+  variables: { first_0: 0, first_1: 20 },
+};
+
+module.exports = () => axios.post('/graphql', payload);
